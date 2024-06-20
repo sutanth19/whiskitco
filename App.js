@@ -12,8 +12,10 @@ import Login from './src/components/auth/Login';
 import SignUp from './src/components/auth/SignUp';
 import PasswordReset from './src/components/auth/PasswordReset';
 
+//Creating a stack navigator instance.
 const Stack = createNativeStackNavigator();
 
+//State Variables: Initializing state variables for user, user type, loading status, and Firebase connection status
 const App = () => {
   const [user, setUser] = useState(null);
   const [userType, setUserType] = useState('');
@@ -35,6 +37,7 @@ const App = () => {
 
     checkFirebaseConnection();
 
+    //Check User Sessio Retrieves user data from AsyncStorage if it exists and sets the user state.
     const checkUserSession = async () => {
       const savedUser = await AsyncStorage.getItem('user');
       if (savedUser) {
@@ -75,6 +78,7 @@ const App = () => {
     return unsubscribe;
   }, []);
 
+  //Handles both sign-in and sign-up logic and Displays appropriate error messages based on the error code.
   const handleAuthentication = async (isLogin, email, password, name, phoneNumber) => {
     try {
       if (isLogin) {
@@ -122,6 +126,7 @@ const App = () => {
     }
   };
 
+  // Handles user sign-out, updates state, and resets navigation stack.
   const handleSignOut = async (navigation) => {
     try {
       await signOut(auth);

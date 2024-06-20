@@ -1,5 +1,3 @@
-// src/components/customer/CustomerHome.js
-
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -25,7 +23,7 @@ const CustomerHome = ({ handleSignOut }) => {
               size={25}
               color="#000"
               style={{ marginRight: 15 }}
-              onPress={() => navigation.navigate('Settings')}
+              onPress={() => navigation.navigate('Settings', { handleSignOut })}
             />
           ),
         })}
@@ -56,14 +54,12 @@ const CustomerHome = ({ handleSignOut }) => {
               },
             })}
           >
-            <Tab.Screen name="MenuView" component={MenuViewScreen} options={{ title: 'Home' , headerShown: false }}/>
-            <Tab.Screen name="MyOrder" component={MyOrderScreen} options={{ title: 'My Order' , headerShown: false }} />
+            <Tab.Screen name="MenuView" component={MenuViewScreen} options={{ title: 'Home', headerShown: false }} />
+            <Tab.Screen name="MyOrder" component={MyOrderScreen} options={{ title: 'My Order', headerShown: false }} />
           </Tab.Navigator>
         )}
       </Stack.Screen>
-      <Stack.Screen name="Settings">
-        {() => <SettingsScreen handleSignOut={handleSignOut} />}
-      </Stack.Screen>
+      <Stack.Screen name="Settings" component={SettingsScreen} />
       <Stack.Screen name="PersonalDetails" component={PersonalDetailsScreen} />
       <Stack.Screen name="ChangePassword" component={ChangePasswordScreen} />
     </Stack.Navigator>

@@ -1,10 +1,11 @@
+// src/components/staff/OrderScreen.js
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const StaffScreen = () => {
+const OrderScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Staff Screen</Text>
+      <Text style={styles.text}>Staff Home Screen</Text>
     </View>
   );
 };
@@ -20,4 +21,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StaffScreen;
+export default OrderScreen;

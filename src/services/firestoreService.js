@@ -1,5 +1,6 @@
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
-import { db } from './firebaseConfig';  // Make sure this import matches your project structure
+// firestoreService.js
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
+import { db } from './firebaseConfig'; // Ensure this path is correct based on your project structure
 
 export const fetchUserType = async (uid) => {
   console.log('Fetching user type for UID:', uid); // Debug log

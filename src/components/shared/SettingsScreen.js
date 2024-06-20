@@ -1,9 +1,9 @@
-// src/components/shared/SettingsScreen.js
-
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-const SettingsScreen = ({ navigation, handleSignOut }) => {
+const SettingsScreen = ({ route, navigation }) => {
+  const { handleSignOut } = route.params;
+
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Settings</Text>
