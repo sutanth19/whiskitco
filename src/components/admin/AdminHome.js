@@ -5,8 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './HomeScreen/HomeScreen';
 import ItemScreen from './ItemScreen/ItemScreen';
 import StaffScreen from './StaffScreen/StaffScreen';
-import AddStaffScreen from './StaffScreen/AddStaffScreen'; 
-import StaffDetailsScreen from './StaffScreen/StaffDetailsScreen'; 
+import AddStaffScreen from './StaffScreen/AddStaffScreen';
+import StaffDetailsScreen from './StaffScreen/StaffDetailsScreen';
 import FeedbackScreen from './FeedbackScreen/FeedbackScreen';
 import ReportScreen from './ReportScreen/ReportScreen';
 import SettingsScreen from '../shared/SettingsScreen';
@@ -20,10 +20,10 @@ const Stack = createStackNavigator();
 
 // Defining AdminTabs component which sets up the bottom tab navigator with different screens for admin
 const AdminTabs = () => (
-  //Sets up a bottom tab navigator with screenOptions for customizing tab icons and colors.
+  // Sets up a bottom tab navigator with screenOptions for customizing tab icons and colors.
   <Tab.Navigator
     screenOptions={({ route }) => ({
-      //Determines which icon to display based on the route name.
+      // Determines which icon to display based on the route name.
       tabBarIcon: ({ color, size }) => {
         let iconName;
 
